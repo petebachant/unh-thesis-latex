@@ -1,6 +1,8 @@
 # UNH thesis LaTeX template
 
 This repository contains unofficial files for writing a UNH thesis using LaTeX.
+The `unhthesis` class was originally based on the
+[`umassthesis`](https://github.com/umasscs/umassthesis) class.
 
 
 ## Usage
