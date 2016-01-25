@@ -10,6 +10,13 @@ To compile the document, run
     latexmk -pdf thesis.tex
 
 
+## Notes
+
+All dissertations must include an acknowledgement of funding sources used to
+support the research that is reported, including both University awards (e.g., a
+Graduate School Dissertation Fellowship) and external grants and contracts.
+
+
 ## Authors
 
 There are comments throughout these files indicating
