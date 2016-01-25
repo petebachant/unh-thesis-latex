@@ -550,7 +550,8 @@
 \def\maketitle{\begin{titlepage}
 \normalsize
                                 \vspace*{0.375in}
-               {\def\baselinestretch{1.2}\normalsize\normalsize {\textbf\@title} \par}
+               {\def\baselinestretch{1.2}\normalsize\normalsize
+                        \MakeTextUppercase{\textbf{\@title}} \par}
                                 \vspace*{\fill}\par
                                       BY
                                 \vspace*{\fill}\par
