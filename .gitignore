@@ -119,3 +119,6 @@ sympy-plots-for-*.tex/
 *.sav
 
 archive
+
+# Nomenclature
+*.nls

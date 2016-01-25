@@ -7,9 +7,27 @@ The `unhthesis` class was originally based on the
 
 ## Usage
 
-To compile the document, run
+To compile the document from a terminal, first ensure the following is in
+`~/.latexmkrc`
+[[ref]](http://tex.stackexchange.com/questions/105943/latexmk-and-nomencl):
+
+```bash
+# Custom dependency and function for nomencl package
+add_cus_dep( 'nlo', 'nls', 0, 'makenlo2nls' );
+sub makenlo2nls {
+system( "makeindex -s nomencl.ist -o \"$_[0].nls\" \"$_[0].nlo\"" );
+}
+```
+
+then run
 
     latexmk -pdf thesis.tex
+
+If using a LaTeX IDE such as [TeXstudio](http://www.texstudio.org/), either set
+the default compiler to `latexmk`, i.e., `txs:///latexmk`, or use the following
+as the "quick build command":
+
+    pdflatex -synctex=1 -interaction=nonstopmode %.tex | pdflatex -synctex=1 -interaction=nonstopmode %.tex | makeindex %.nlo -s nomencl.ist -o %.nls | pdflatex -synctex=1 -interaction=nonstopmode %.tex
 
 
 ## Notes
