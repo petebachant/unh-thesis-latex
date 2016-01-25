@@ -1,11 +1,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% This is unhthesis.sty file. 
+% This is unhthesis.sty file.
 % This style file has been created to satisfy the requirements
 % of the graduate school of the University of New Hampshire.
 %
-% I took the U. Mass umthesis.cls and unhthesis.cls file created by 
+% I took the U. Mass umthesis.cls and unhthesis.cls file created by
 % Kelly Black and modified them to create this file.
 %
 %
@@ -55,6 +55,8 @@
 %% Package loading
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \LoadClass[\@mysize]{report}[1996/01/02]
+\RequirePackage{textcase}
+\RequirePackage{etoolbox}
 
 \newenvironment{singlespace}{\baselineskip=0.0em}{\ifdouble@space\doublespacenormalsize\fi}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,7 +104,7 @@
 %    {}                                  %   then do nothing;
 %    {\def\thefigure                     %   else define \thefigure format.
 %        {\thechapter-\arabic{figure}}}  %
-%        
+%
 %\@ifundefined{thechapter}               % If chapter counter undefined;
 %    {}                                  %   then do nothing;
 %    {\def\thetable                     %   else define \thetable format. Faraz Feb 13, 2012
@@ -163,6 +165,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Chapter/Appendix related stuff
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Disable uppercase when making PDF strings...this breaks hyperref
+\AtEndPreamble{%
+  \@ifpackageloaded{hyperref}%
+    {\pdfstringdefDisableCommands{%
+      \let\MakeTextUppercase\relax%
+      \let\MakeUppercase\relax%
+      \let\uppercase\relax}%
+     \typeout{Disabled uppercase in PDF strings}}%
+    {\typeout{Did not detect hyperref package}}%
+}
+
 
 \newcommand{\unnumberedchapter}[2][]{
   \def\@tempa{#1}
@@ -472,8 +486,8 @@
    {\hfill                                      % Rubber space pushes this
     \parbox{4in}                                % paragraph box to the right.
       {\rule{-0.05in}{0.75in}%                      % Build a strut,
-\vspace{-0.15in}        
-       \hrulefill\null\\*                       %  Make a signature blank       
+\vspace{-0.15in}
+       \hrulefill\null\\*                       %  Make a signature blank
          {\small                               %  Get a larger font. /switched to normal
           #1                                    %  Put name/title under line.
          }                                      %
@@ -500,7 +514,7 @@
        %\par                                     % skip down
        \begin{singlespace}                      % Get single space environment.
        %\signatureblank{ #2}                %  Do a signature line.
-   
+
        %\signatureblank{#1 \\ #2}                %  Do a signature line.
        \end{singlespace}                        %
       }                                         %
@@ -520,7 +534,7 @@
     \newpage\centering                  %  Start a new page, center the text.
     \thispagestyle{empty}               %  Don't do headers or footers.
     \parindent 0pt                      %  Don't indent 'paragraphs'.
-	%\parskip 10pt plus 5pt minus 5pt    
+	%\parskip 10pt plus 5pt minus 5pt
     \parskip 10pt plus 1fil minus 1fil  %  Set spacing between 'paragraphs'.
     \def\baselinestretch{1}             %  Set spacing between lines.
     \@normalsize\vbox to                %
@@ -563,10 +577,10 @@
 
 
 
-\def\copyrightyear#1                    % Define \copyrightyear{} 
+\def\copyrightyear#1                    % Define \copyrightyear{}
    {\gdef\@copyrightyear{#1}
    }
-                                              
+
 \newcommand{\makecopyright}
     {
       \newpage
@@ -577,13 +591,13 @@
                            \copyright \@copyrightyear\\
                                    \@author
       \end{center}
-   
+
     }
 
 
-\def\approvalpage{               
+\def\approvalpage{
     \newpage                                        % Start a new page.
-%    \thispagestyle{empty}               % Don't do headers or footers.    
+%    \thispagestyle{empty}               % Don't do headers or footers.
     \parindent 0pt                      % Don't indent 'paragraphs'.
     \parskip 10pt plus 1fil minus 1fil  % Set spacing between 'paragraphs'.
     \@normalsize\vbox to
@@ -608,20 +622,20 @@
          \vspace{1 in}
         \hspace{2.532 in}
          On 11/19/2014\\
-         
+
          \vspace{1 in}
          \small{Original approval signatures are on file with the University of New Hampshire Graduate School.}
          %\dateblank
        \end{singlespace}
        \vspace*{\fill}
-            \thispagestyle{empty} 
+            \thispagestyle{empty}
     \end{approvalpage}
    }
 
 
-%\def\approvalpage{               
+%\def\approvalpage{
 %    \newpage                                        % Start a new page.
-%%    \thispagestyle{empty}               % Don't do headers or footers.    
+%%    \thispagestyle{empty}               % Don't do headers or footers.
 %    \parindent 0pt                      % Don't indent 'paragraphs'.
 %    \parskip 10pt plus 1fil minus 1fil  % Set spacing between 'paragraphs'.
 %    \@normalsize\vbox to
@@ -646,7 +660,7 @@
 %         \dateblank
 %       \end{singlespace}
 %       \vspace*{\fill}
-%            \thispagestyle{empty} 
+%            \thispagestyle{empty}
 %    \end{approvalpage}
 %   }
 
@@ -704,14 +718,14 @@
 %    \addcontentsline{toc}{FrontMatter}{Abstract}
 %    \@normalsize
 %   }
-   
+
 \def\Abstract{
         %s\vspace*{0.5in}
     %\chapter*{Abstract}
     \thispagestyle{plain}
         \addcontentsline{toc}{FrontMatter}{ABSTRACT}
     \@normalsize
-   }   
+   }
 \def\endAbstract{\par}
 
 \def\Abstractpage
@@ -729,7 +743,7 @@
                             }
                       \def\baselinestretch{1}\@normalsize
                       \Unh, \@degreemonth, \@degreeyear \\
-                                                   
+
     \end{center}
     \par
     \begin{Abstract}
