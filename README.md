@@ -3,6 +3,13 @@
 This repository contains unofficial files for writing a UNH thesis using LaTeX.
 
 
+## Usage
+
+To compile the document, run
+
+    latexmk -pdf thesis.tex
+
+
 ## Authors
 
 There are comments throughout these files indicating
