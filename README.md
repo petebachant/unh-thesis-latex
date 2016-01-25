@@ -54,7 +54,25 @@ right and top to bottom:
 
 Negative values for `\hoffset` shift the text left on the page. Negative values
 for `\voffset` shift the text up on the page. To change the size of the text box
-look at page layout section in `unhthesis.cls`,
+look at page layout section in `unhthesis.cls`.
+
+
+### Including code
+
+Note that rather than including as appendices, it may be more useful to readers
+if long blocks of code, e.g., full programs, are placed online in a version
+control repository, e.g., on [GitHub](https://github.com), then archived with a
+service that mints DOIs, such as [figshare](https://figshare.com) or
+[Zenodo](https://zenodo.org). This way, the version of the code used can be
+cited in the text.
+
+
+#### MATLAB
+
+1. Obtain `mcode.sty` and place in this directory.
+2. Add `\usepackage[autolinebreaks]{mcode}` to `preamble.tex`
+3. Use the command `\lstinputlisting{code/hello_world.m}` where  
+   `code/hello_world.m`, is the path to the code to include.
 
 
 ## Authors
