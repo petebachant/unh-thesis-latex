@@ -145,7 +145,7 @@
 \def\@onlyappendix[#1]#2{
   \refstepcounter{chapter}
   \typeout{\@chapapp.}
-  \addcontentsline{toc}{OnlyAppendix}{{#1}}
+  \addcontentsline{toc}{OnlyAppendix}{\texorpdfstring{\MakeUppercase{#1}}{}}
   \chaptermark{#1}
   \if@twocolumn
     \@topnewpage[\@makeonlyappendixhead{#2}]
@@ -173,7 +173,7 @@
     \def\@tempc{#1}
   \fi
   \chapter*{#2}
-  \addcontentsline{toc}{\toc@section}{{\@tempc}}
+  \addcontentsline{toc}{\toc@section}{\texorpdfstring{\MakeUppercase{\@tempc}}{}}
 }
 
 %% redefine @chapter to change toc entries
@@ -182,9 +182,9 @@
     \refstepcounter{chapter}%
     \typeout{\@chapapp\space\thechapter.}%
     \addcontentsline{toc}{\toc@section}
-                         {\protect\numberline{\thechapter.}{#1}}%
+                         {\protect\numberline{\thechapter.}\texorpdfstring{\MakeUppercase{#1}}{}}%
   \else
-    \addcontentsline{toc}{\toc@section}{{#1}}%
+    \addcontentsline{toc}{\toc@section}{\texorpdfstring{\MakeUppercase{#1}}{}}%
   \fi
   \chaptermark{#1}%
   \if@twocolumn
@@ -221,11 +221,11 @@
     \vspace*{0.25in}
   \begin{center}\large\bfseries
     \ifnum \c@secnumdepth >\m@ne
-      \@chapapp\ \thechapter % 'CHAPTER' and number.
+      \MakeUppercase\@chapapp\ \thechapter % 'CHAPTER' and number.
       \par\nobreak
     \fi
   \addvspace{\topskip}
-  {#1}
+  \MakeUppercase{#1}
   \end{center}
   \par\nobreak                          % TeX penalty to prevent page break.
   \vskip 24\p@                          % Space between title and text.
@@ -242,7 +242,7 @@
     \vspace*{0.25in}
   \begin{center}
     \large\bfseries                     % Title.
-    {#1}\par
+    \MakeUppercase{#1}\par
   \end{center}
  % \nobreak                              % TeX penalty to prevent page break.
   \vskip 24\p@                          % Space between title and text.
@@ -275,7 +275,7 @@
     \normalsize
     \chapter*{\contentsname
         \@mkboth{%
-           \contentsname}{\contentsname}}%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
     {\hfill \textbf{Page}\par}%
     {\hyphenpenalty=\unhthesis@listhyphenpenalty\@starttoc{toc}}%
     \if@restonecol\twocolumn\fi
@@ -330,7 +330,7 @@
   \addvspace{\baselineskip}
   \if@seenChapter\else
     \addvspace{2\baselineskip}
-    \parindent\z@ {\bfseries {\chaptername}} \par
+    \parindent\z@ {\bfseries \MakeUppercase{\chaptername}} \par
     \addvspace{\baselineskip}
     \@seenChaptertrue
   \fi
@@ -358,7 +358,7 @@
   \addvspace{2\baselineskip}
   \parindent\z@
   \@dottedtocline{0}{0.0em}{1.5em}{\bfseries
-    {\appendixname}: #1}{\bfseries #2}
+    \MakeUppercase{\appendixname}: #1}{\bfseries #2}
   }
 
 \newcommand{\l@BackMatter}[2]{
@@ -389,8 +389,8 @@
       \@restonecolfalse
     \fi
     \chapter{\listfigurename
-      \@mkboth{\listfigurename}%
-              {\listfigurename}}%
+      \@mkboth{\MakeUppercase\listfigurename}%
+              {\MakeUppercase\listfigurename}}%
     {\normalsize\parindent\z@\textbf{Figure \hfill Page}\par}%
     {\hyphenpenalty=\unhthesis@listhyphenpenalty\@starttoc{lof}}%
     \if@restonecol\twocolumn\fi
@@ -411,7 +411,7 @@
   \fi
   \chapter{\listtablename
      \@mkboth{%
-         \listtablename}{\listtablename}}%
+         \MakeUppercase\listtablename}{\MakeUppercase\listtablename}}%
    {\normalsize\parindent\z@\textbf{Table \hfill Page}\par}%
    {\hyphenpenalty=\unhthesis@listhyphenpenalty\@starttoc{lot}}%
    \if@restonecol\twocolumn\fi
@@ -540,7 +540,7 @@
                                 \vspace*{\fill}\par
                                       BY
                                 \vspace*{\fill}\par
-                               {{\@author}}
+                               {\MakeUppercase{\@author}}
                                      \par
                                  \@prevdegrees
                                 \vspace*{\fill}\par
@@ -890,7 +890,7 @@
   %
   \renewenvironment{thebibliography}[1]{%
     \begin{base@thebibliography}{#1}%
-      \addcontentsline{toc}{\toc@section}{{\bibname}}%
+      \addcontentsline{toc}{\toc@section}{\texorpdfstring{\MakeUppercase{\bibname}}{}}%
     }{\end{base@thebibliography}}}
 
 \newcommand{\doublespace}{\doublespacenormalsize}
