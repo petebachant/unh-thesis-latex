@@ -75,16 +75,3 @@ cited in the text.
 2. Add `\usepackage[autolinebreaks]{mcode}` to `preamble.tex`
 3. Use the command `\lstinputlisting{code/hello_world.m}` where  
    `code/hello_world.m`, is the path to the code to include.
-
-
-## Authors
-
-There are comments throughout these files indicating
-contributions from various people.
-If you contributed and are not acknowledged please open
-an issue or submit a pull request.
-
-* I.C. Ruset
-* B. Donmez
-* Ivo Nedyalkov
-* Faraz Medhi
