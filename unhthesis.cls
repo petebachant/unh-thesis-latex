@@ -692,8 +692,7 @@
         \vspace*{0.5in}
     \chapter*{Acknowledgments}
     \thispagestyle{plain}
-        \addcontentsline{toc}{FrontMatter}{ACKNOWLEDGEMENTS}
-        %\addcontentsline{toc}{FrontMatter}{Acknowledgements}
+        \addcontentsline{toc}{FrontMatter}{\MakeTextUppercase{Acknowledgements}}
     \@normalsize
    }
 \def\endAcknowledgments{\par}
@@ -723,7 +722,7 @@
         %s\vspace*{0.5in}
     %\chapter*{Abstract}
     \thispagestyle{plain}
-        \addcontentsline{toc}{FrontMatter}{ABSTRACT}
+        \addcontentsline{toc}{FrontMatter}{\MakeTextUppercase{Abstract}}
     \@normalsize
    }
 \def\endAbstract{\par}
