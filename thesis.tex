@@ -56,11 +56,8 @@
 \includecomment{figs}
 %\excludecomment{figs}
 
-
 \hyphenation{gno-mon-ly}
 \titlespacing*{\section}{0in}{*0}{0.2in}
-
-
 
 \makenomenclature
 \RequirePackage{ifthen}
@@ -74,23 +71,9 @@
 }% matches Abbreviations
 }% matches Greek Symbols
 }% matches Roman Symbols
-%------------------------------------------------------------------------------
-%
-%
-%
-%---------------------------------------------------------------------------------
 
-
-%------------------------------------------------------------------------------
 \hoffset        -0.00in
-
 \voffset         0.0in
-%-------------------------------------------------------------------
-
-
-%--------------------------------------------------------------------------------
-% PRELIMINARY PAGES
-%--------------------------------------------------------------------------------
 
 \begin{document}
 
@@ -100,8 +83,7 @@
 
 \input{committee}
 
-\input{ackno}
-
+\input{acknowledgements}
 
 \tableofcontents
 
@@ -115,19 +97,11 @@
 
 \mainmatter
 
-\include{1/chap1}
+\include{chapters/chap1}
 
-\include{2/chap2}
+\include{chapters/chap2}
 
-\include{3/chap3}
-
-\include{4/chap4}
-
-\include{5/chap5}
-
-\include{6/chap6}
-
-\include{7/chap7}
+\include{chapters/chap3}
 
 \backmatter
 
