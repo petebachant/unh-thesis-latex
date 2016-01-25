@@ -1,0 +1,217 @@
+\documentclass[12pt]{unhthesis_mod}
+%\documentclass[12pt, doublespace]{unhthesis}
+
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{rotating}
+%\usepackage{natbib}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp,wasysym,comment,titlesec,color,booktabs} %colortbl,
+\usepackage[intoc]{nomencl}
+%\usepackage[table]{xcolor}
+\usepackage{appendix}
+\usepackage{multirow,subfig}
+\usepackage{relsize,units}
+\usepackage[multiple]{footmisc}
+\usepackage{ulem}
+\usepackage{longtable}
+\usepackage{url}
+%\usepackage{pdfpages}
+\usepackage[autolinebreaks]{mcode}
+\usepackage{float}
+\usepackage{pdfpages}
+%\usepackage{ifthen}
+\normalem
+
+\graphicspath{{img/}}
+
+%\bibpunct{(}{)}{;}{a}{,}{,}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newcommand{\baselinestrech}{3}
+
+\definecolor{myGrey}{rgb}{0.85,0.85,0.85}
+
+\newcommand{\nt}{\noindent}
+\newcommand{\cd}{\ensuremath{\mathrm{d}}}
+\newcommand{\del}{\ensuremath{\partial}}
+\newcommand{\Del}[2]{\ensuremath{\frac{\partial{#1}}{\partial{#2}}}}
+\newcommand{\Delsq}[2]{\ensuremath{\frac{\partial^2{#1}}{\partial{#2}^2}}}
+
+\newcommand{\bracI}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\bracII}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\bracIII}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\bracIV}[1]{\ensuremath{\left\langle#1\right\rangle}}
+
+\newcommand{\etal}{\emph{et al.}}
+\newcommand{\ml}{\mathlarger}
+
+\includecomment{figs}
+%\excludecomment{figs}
+
+
+\hyphenation{gno-mon-ly}
+\titlespacing*{\section}{0in}{*0}{0.2in}
+
+ 
+
+\makenomenclature
+\RequirePackage{ifthen}
+\renewcommand{\nomgroup}[1]{%
+\ifthenelse{\equal{#1}{A}}{\item[\textbf{Roman Symbols}]}{%
+\ifthenelse{\equal{#1}{G}}{\vspace{0.5cm}\item[\textbf{Greek Symbols}]}{%
+\ifthenelse{\equal{#1}{Z}}{\vspace{0.5cm}\item[\textbf{Abbreviations}]}{%
+\ifthenelse{\equal{#1}{S}}{\vspace{0.5cm}\item[\textbf{Subscripts/Superscripts}]}
+{}
+}% matches Subscripts
+}% matches Abbreviations
+}% matches Greek Symbols
+}% matches Roman Symbols
+%------------------------------------------------------------------------------
+%
+%   For a UNH Thesis, the margins are 1.5" on the left, 1" at the bottom
+%   and right.  The first page of a chapter or major section has a top
+%   margin of 1.5".  On all other pages, the top margin is 1".
+%
+%   The parameters for the UNHTHESIS document style are set to meet the
+%   above requirements.  However, exact placement of the text on the page
+%   can vary from printer to printer, or even from week to week on the same
+%   printer.  To compensate for this, two parameters can be used to shift
+%   the entire text 'box' left to right and top to bottom:
+%
+%
+%                                       |<-->| \hoffset
+%                                       |    |
+%                                       |    |
+%                 +--------------------------+ --------
+%                 |                          |       ^
+%                 |                          |       |  \voffset
+%                 |                          |       v
+%                 |    +----------------+    | --------
+%             d    |    |              xx|    |
+%                 |    |                |    |
+%                 |    |  xx xxxxxxx xxx|    |
+%                 |    |xxxx xx x xxx xx|    |
+%                 |    |xxx xxx x xxxx x|    |
+%                 |    |x xxx xxx x xxxx|    |
+%                 |    |xxx xxx xxxx xxx|    |
+%                 |    |x xx xxxx.      |    |
+%                 |    +----------------+    |
+%                 |                          |
+%                 |                          |
+%                 +--------------------------+
+%
+%   Negative values for \hoffset shift the text left on the page.
+%   Negative values for \voffset shift the text up on the page.
+%
+%   To chenge the size of the txt box look at Page layout part in unhthesis.clo
+%
+%
+%---------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------
+\hoffset        -0.00in
+
+\voffset         0.0in
+%-------------------------------------------------------------------
+
+
+%--------------------------------------------------------------------------------
+% PRELIMINARY PAGES
+%--------------------------------------------------------------------------------
+
+\begin{document}
+
+\input{cover}
+
+\input{copyright}
+
+\input{committee}
+
+\input{ackno}
+
+
+\tableofcontents
+
+\printnomenclature[1in]
+
+%\listoftables
+
+\listoffigures
+
+\include{abstract}
+
+\mainmatter
+
+\include{1/chap1}
+
+\include{2/chap2}
+
+\include{3/chap3}
+
+\include{4/chap4}
+
+\include{5/chap5}
+
+\include{6/chap6}
+
+\include{7/chap7}
+
+\backmatter
+
+%\bibliographystyle{plainnat}
+%\bibliography{/home/faraz/storage/documents/myLibrary/refsFull}
+
+\include{biblio}
+
+\appendix
+
+\include{app/app0}
+\include{app/app1}
+%\include{app/app2}
+%\include{app/app3}
+
+%
+%\chapter[]{Stress distributions} 
+%hahaha
+%\chapter{}
+%\section{Stress distributions}
+
+%%--------------------------------------------------------------------------------
+%% BIBLIOGRAPHY PAGE
+%%--------------------------------------------------------------------------------
+%\backmatter
+%\bibliographystyle{plainnat}
+%\bibliography{/home/faraz/storage/documents/myLibrary/refsFull}
+
+%\include{biblio}
+
+\end{document}
+
+%%
+All dissertations must include an acknowledgement of funding sources used to support the 
+research that is reported, including both University awards (e.g., a Graduate School Dissertation 
+Fellowship) and external grants and contracts. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
