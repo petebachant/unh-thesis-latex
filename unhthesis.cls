@@ -431,6 +431,8 @@
    \if@restonecol\twocolumn\fi
    }
 
+
+
 \let\l@table\l@figure
 
 \let\unhthesis@base@starttoc\@starttoc
@@ -699,6 +701,13 @@
 \def\endAcknowledgments{\par}
 
 
+
+\def\listofnomenclature{
+    \newpage
+    \phantomsection
+    \addcontentsline{toc}{FrontMatter}{\MakeTextUppercase{Nomenclature}}
+    \printnomenclature[1in]
+}
 
 
 
