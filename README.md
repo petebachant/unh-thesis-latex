@@ -30,6 +30,12 @@ as the "quick build command":
     pdflatex -synctex=1 -interaction=nonstopmode %.tex | pdflatex -synctex=1 -interaction=nonstopmode %.tex | makeindex %.nlo -s nomencl.ist -o %.nls | pdflatex -synctex=1 -interaction=nonstopmode %.tex
 
 
+## Figures
+
+Figures placed in the `./figures` directory will be found automatically. This is
+defined in `preamble.tex` with the `\graphicspath` command.
+
+
 ## Notes
 
 All dissertations must include an acknowledgement of funding sources used to
