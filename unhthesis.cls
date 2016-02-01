@@ -798,7 +798,7 @@
 
 \renewcommand{\paragraph}{
   \@startsection{paragraph}{4}{\z@}%
-                {2.5ex \@plus1ex \@minus.2ex}%
+                {2.5ex \@plus 1ex \@minus .2ex}%
                 {-1em}%
                 {\normalfont\normalsize\bfseries}}
 
