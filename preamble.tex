@@ -74,3 +74,22 @@ urlcolor=black, linkcolor=black]{hyperref}
 
 \hoffset        -0.00in
 \voffset         0.0in
+
+%%% Heading spacing fixes
+%%% For some reason this doesn't work inside the class
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+                      {-3.5ex \@plus -1ex \@minus -.2ex}%
+                      {0.001ex \@plus.2ex}%
+                      {\normalfont\large\bfseries}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                         {-3.0ex \@plus -1ex \@minus -.2ex}%
+                         {0.001ex \@plus.2ex}%
+                         {\normalfont\normalsize\bfseries}}
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                            {-2.5ex \@plus -1ex \@minus -.2ex}%
+                            {0.001ex \@plus.2ex}%
+                            {\normalfont\normalsize\bfseries}}
+\makeatother
