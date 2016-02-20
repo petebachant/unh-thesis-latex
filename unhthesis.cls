@@ -695,7 +695,7 @@
         \vspace*{0.5in}
     \chapter*{Acknowledgments}
     \thispagestyle{plain}
-        \addcontentsline{toc}{FrontMatter}{\MakeTextUppercase{Acknowledgements}}
+        \addcontentsline{toc}{FrontMatter}{\MakeTextUppercase{Acknowledgments}}
     \@normalsize
    }
 \def\endAcknowledgments{\par}
