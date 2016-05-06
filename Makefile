@@ -6,3 +6,7 @@ thesis:
 
 excerpt: thesis
 	latexmk -pdf excerpt.tex
+
+
+clean:
+	latexmk -c thesis.tex
