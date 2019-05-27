@@ -919,7 +919,7 @@
 
 \newcommand{\doublespace}{\doublespacenormalsize}
 
-% silence hyperref warning about bookmark level
+% Silence hyperref warning about bookmark level
 \providecommand*{\toclevel@FrontMatter}{0}
 \providecommand*{\toclevel@Chapter}{0}
 \providecommand*{\toclevel@BackMatter}{0}
